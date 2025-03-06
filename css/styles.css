@@ -1,0 +1,462 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing:border-box;
+}
+
+
+@font-face{
+    font-family: 'SourceSerif4';
+    src: url('../fonts/SourceSerif4-Black.ttf') format('truetype');
+    font-weight:900px;
+    font-style:normal;
+}
+
+@font-face{
+    font-family: 'SourceSerif4';
+    src: url('../fonts/SourceSerif4-BlackIt.ttf') format('truetype');
+    font-weight: 900;
+    font-style: italic;
+}
+
+@font-face{
+    font-family: 'SourceSerif4';
+    src: url('../fonts/SourceSerif4-Bold.ttf') format('truetype');
+    font-weight:700;
+    font-style: normal;
+}
+
+@font-face{
+    font-family: 'SourceSerif4';
+    src: url('../fonts/SourceSerif4-BoldIt.ttf')format('truetype');
+    font-weight: 700;
+    font-style: italic;
+}
+
+
+
+@font-face{
+    font-family: 'SourceSerif4';
+    src: url('../fonts/SourceSerif4Caption-Regular.ttf')format('truetype');
+    font-weight:400;
+    font-style: normal;
+}
+
+@font-face{
+    font-family: 'NyushuSerif';
+    src: url('../fonts/NyushuSerif-1.002.ttf')format('truetype'),
+         url('../fonts/NyushuFirmiaItal-1.003.ttf')format('truetype'),
+         url('../fonts/NyushuFirmia-1.003.ttf')format('truetype'),
+         url('../fonts/NyushuFengQi-1.003.ttf')format('truetype');
+}
+
+body {
+    background-color: black;
+    color: white;
+    font-family:"SourceSerif4";
+    font-weight: normal;
+    /* overflow-y: hidden; */
+    min-height: 100vh;
+}
+
+
+.HomePage {
+    display: flex;
+    justify-content: center;
+    /* align-items: center; */
+}
+
+.HomePageContent {
+    position: relative;
+    width: 100%;
+}
+
+
+
+.HomePageImage {
+    position: fixed;
+    opacity: 1;
+    /* overflow:hidden; */
+    z-index:0;
+}
+
+.AboveHomePageImage {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh; /* Same height as the viewport */
+    z-index: 1;
+    /* pointer-events: none; */
+    background-color: rgb(0, 0, 0);
+}
+
+.overlay{
+    position: absolute;
+    top: 0;
+    left: 0;
+     width: 100%;
+     height: 100%;
+     background-color: rgba(0, 0, 0, 0.5);
+     z-index: 2;
+}
+
+.imageholder {
+    width: 100vw;
+    height: 90vh;
+    position: relative;
+    display:block;
+    overflow:hidden;
+    z-index: 0;
+}
+
+@media (max-width: 768px) {
+    .imageholder {
+        width: 100% !important;
+        height: 90vh !important;
+    }
+    .WomenPlaying {
+        width: 100% !important;
+        height: 100% !important;
+    }
+}
+
+.WomenPlaying {
+    /* width: 100%;
+    height: 90vh;
+    display:block; */
+
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index:0;
+}
+
+/* .Gradient-Overlay{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 390vw;
+    height: 20%;
+    background: linear-gradient(to bottom, rgba(0,0,0,0) 0%, black);
+    pointer-events: none;
+    z-index: 2;
+    transition: width 0.3s ease;
+} */
+
+.Gradient-Overlay-2 {
+    position:fixed;
+    /* bottom: 0;
+    left: 0; */
+    width:100%;
+    height:100%;
+    object-fit: cover;
+    background: linear-gradient(to bottom, rgba(0,0,0,0) 0%, black);
+    pointer-events: none;
+    z-index: 2;
+}
+
+
+
+.Title {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: NyushuSerif;
+    font-size: 17vw;
+    text-align: center;
+    max-width: 80%;
+    line-height: 1.5;
+    z-index: 2;
+}
+
+
+.TimeLine-container {
+    position:relative;
+    background:black;
+    /* min-height: 10vh;
+    width: 390vw; */
+    margin-top: 90vh;
+    bottom: 0;
+    z-index: 10;
+    
+    /* margin-left: 20px;
+    width: 100%;
+    display:flex;
+    justify-content: flex-start;
+    overflow-x: auto;
+    white-space: nowrap;
+    padding: 200px 0; */
+    /* height: auto; */
+}
+
+/* .previous-section{
+    margin-bottom: 250px;
+} */
+
+.timeline-wrapper {
+    width: max-content;
+    background-color: transparent;
+}
+
+.TimeLine-line {
+    display: flex;
+    justify-content:space-evenly;
+    align-items:center;
+    width: 390vw;
+    height: 2px;
+    background-color: white;
+    position:relative;
+    transition: width 0.3s ease;
+}
+
+.tick-container {
+    position: relative;
+    display: flex;
+    flex-direction:row;
+    align-items: center;
+    width:50vw;
+}
+
+.tick {
+    width: 3px;
+    height: 20px;
+    background-color: white;
+    position: relative;
+    cursor: pointer;
+    transition: height 0.3s ease-in-out;
+    transform-origin: top;
+}
+
+.tick-label {
+    margin-left: 10px;
+    margin-top: 80px;
+    position:absolute;
+    color: white;
+    background:black;
+    font-size: 14px;
+    text-align: left;
+    white-space: normal;
+    width: 100px;
+}
+
+.tick::after{
+    content:attr(data-lable);
+    position:absolute;
+    color: white;
+    background:black;
+    font-size: 14px;
+    text-align: left;
+    white-space: normal;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    width: 90px;
+}
+
+/* .tick-containter:nth-child(odd)::after {
+
+    transform: translateY(-100%);
+    top: -15px;
+}
+
+.tick-container:nth-child(even)::after {
+    transform:translateY(100%);
+    bottom: -10px;
+} */
+
+
+
+
+
+
+
+
+
+
+.text-block {
+    position: absolute;
+    top: 270px;
+    left: 5px;
+    max-height: 80vh;
+    width:50vw;
+    overflow-y:auto;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 10px;
+    font-size: 14px;
+    display: none;
+    transition: opacity 0.3s ease-in-out;
+
+
+    white-space: normal;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+
+.tick-container:hover .tick{
+    height: 300px;
+    width: 5px;
+}
+
+
+
+/* .tick:hover .text-block {
+    display: block;
+    opacity: 1;
+} */
+ 
+/* .tick-lable:hover .tick{
+    height: 300px;
+    width: 5px;
+} */
+
+.tick-container.active .tick{
+    height: 300px;
+    width: 5px;
+}
+
+.tick-container.active .text-block {
+    display: block;
+}
+
+
+
+#blackbackground{
+    position:absolute;
+    background: black;
+    width: 390vw;
+    height: 90vh;
+    z-index:9;
+    display: none;
+}
+
+#blackbackground.active {
+    display: block;
+}
+
+/* .TimeLine-mark {
+    display: inline-block; 
+    margin: 0 1rem;
+    cursor: pointer; 
+    position: relative;
+    font-weight: bold;
+} */
+
+
+
+
+
+
+
+/* text block style */
+.text-block p{
+    margin-bottom: 15px;
+    line-height: 1.5;
+}
+
+.text-block a{
+    display: block;
+    margin-top: 10px;
+    margin-bottom: 70px;
+    color:rgb(99, 99, 99);
+    text-align: right;
+}
+
+ul {
+    list-style-type: none; /* no bullets */
+    padding-left: 0;
+}
+
+li {
+    margin-bottom: 10px;
+}
+
+#women-writing-nushu {
+    width: 50vw;
+}
+
+.jing-sheng-image {
+    display: flex;
+    gap: 5px;
+}
+
+#jing-sheng,
+#jing-sheng-nushu {
+    width: 25vw;
+}
+
+/* .huxin_intro_image{
+    position:fixed;
+    
+} */
+
+#huxin-image{
+    width: 50vw;
+    /* float: right;
+    margin-left: 20px;
+    shape-outside: margin-box; */
+}
+
+#nushu-class{
+    width: 50vw;
+}
+
+#nushu-sew {
+    width: 50vw;
+}
+
+#nushu-women-back {
+    width: 50vw;
+}
+
+.grid-table {
+    width: 45vw;
+    border-collapse: collapse; 
+}
+
+
+#nushu-poem {
+    width: 50vw;
+}
+
+.grid-table td {
+    border: 1px solid rgb(255, 255, 255); 
+    padding: 5px; 
+    text-align: center; 
+}
+
+.Embroider-Nushu {
+    display: flex;
+    gap: 5px;
+}
+
+#Embroider-Nushu2{
+    width: 25vw;
+}
+
+#Embroider-Nushu1 {
+    width: 25vw;
+}
+
+/* .nushu-typeface {
+    display: flex;
+    gap: 5px;
+} */
+
+#nushu-up {
+    width:28vw;
+}
+
+#nushu-low {
+    width: 28vw;
+}
+
+#other {
+    width: 30vw;
+}
+
+img {
+    width:48vw;
+}
