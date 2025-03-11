@@ -180,7 +180,7 @@ body {
     margin-top: 90vh;
     bottom: 0;
     z-index: 10;
-    
+    width: max-content;
     /* margin-left: 20px;
     width: 100%;
     display:flex;
@@ -195,10 +195,10 @@ body {
     margin-bottom: 250px;
 } */
 
-.timeline-wrapper {
+/* .timeline-wrapper {
     width: max-content;
     background-color: transparent;
-}
+} */
 
 .TimeLine-line {
     display: flex;
@@ -302,7 +302,7 @@ body {
 
 
 
-/* .tick:hover .text-block {
+/* .tick-container:hover .text-block {
     display: block;
     opacity: 1;
 } */
