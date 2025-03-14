@@ -110,6 +110,20 @@ body {
     z-index: 0;
 }
 
+#question {
+    position:absolute;
+    width:5vw;
+    height:3vh;
+    top: 1vh;
+    right:2vw;
+    background: rgba(0, 0, 0, 0.8);
+    text-align: center;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+
 @media (max-width: 768px) {
     .imageholder {
         width: 100% !important;
@@ -238,7 +252,7 @@ body {
     font-size: 14px;
     text-align: left;
     white-space: normal;
-    width: 100px;
+    width: 20vw;
 }
 
 .tick::after{
@@ -298,6 +312,12 @@ body {
 .tick-container:hover .tick{
     height: 300px;
     width: 5px;
+}
+
+.tick-container:hover .tick-label{
+    /* font-weight: bold; */
+    font-size: 16px;
+    margin-top: 100px;
 }
 
 
