@@ -24,21 +24,24 @@ function updateWidth (){
     }
 }
 
+// $(".paragraph-block").click(function(){
+//     $(this).toggleClass("active");
+// })
 
- $(".tick-container").click(function(){
-     $(this).toggleClass("active");
+$(".tick-container").click(function(){
+    $(this).toggleClass("active");
 
 
-     if($(".tick-container.active").length > 0) {
-         $("#blackbackground").addClass("active");
-        //  $("body").css("overflow-y","auto");
-     }else{
-         $("#blackbackground").removeClass("active");
-        //  $("body").css("overflow-y", "hidden");
-     }
-     updateWidth();
- });
- updateWidth();
+    if($(".tick-container.active").length > 0) {
+        $("#blackbackground").addClass("active");
+    //  $("body").css("overflow-y","auto");
+    }else{
+        $("#blackbackground").removeClass("active");
+    //  $("body").css("overflow-y", "hidden");
+    }
+    updateWidth();
+});
+updateWidth();
  
 
 //  $( ".tick-label" ).hover(function() {

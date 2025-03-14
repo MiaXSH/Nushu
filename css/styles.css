@@ -377,6 +377,10 @@ li {
     width: 50vw;
 }
 
+#yanghuanyi {
+    width:40vw;
+}
+
 .jing-sheng-image {
     display: flex;
     gap: 5px;
@@ -384,7 +388,7 @@ li {
 
 #jing-sheng,
 #jing-sheng-nushu {
-    width: 25vw;
+    width: 24vw;
 }
 
 /* .huxin_intro_image{
@@ -393,14 +397,14 @@ li {
 } */
 
 #huxin-image{
-    width: 50vw;
+    width: 40vw;
     /* float: right;
     margin-left: 20px;
     shape-outside: margin-box; */
 }
 
 #nushu-class{
-    width: 50vw;
+    width: 45vw;
 }
 
 #nushu-sew {
@@ -460,3 +464,37 @@ li {
 img {
     width:48vw;
 }
+
+
+/* text block style HOVER*/
+
+#english {
+    display:none;
+    /* opacity: 0; */
+}
+
+.paragraph-block:hover #chinese{
+    
+    /* transition: opacity 0.3s ease-in-out;    
+    opacity:0; */
+    display:none;
+} 
+
+/* #english:hover {
+    display:none;
+} */
+
+.paragraph-block:hover #english{
+    
+    /* transition: opacity 0.3s ease-in-out;
+    opacity:1; */
+    display:block;
+}
+
+/* .paragraph-block.active #chinese{
+    display:none;
+}
+
+.paragraph-block.active #english{
+    display:block;
+} */
