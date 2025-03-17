@@ -110,7 +110,7 @@ body {
     z-index: 0;
 }
 
-#question {
+/* #question {
     position:absolute;
     width:5vw;
     height:3vh;
@@ -122,7 +122,7 @@ body {
     border-top-right-radius: 20px;
     border-bottom-left-radius: 20px;
     border-bottom-right-radius: 20px;
-}
+} */
 
 @media (max-width: 768px) {
     .imageholder {
@@ -171,30 +171,54 @@ body {
 }
 
 
-
-.Title {
+.engChinTitle{
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    font-family: NyushuSerif;
-    font-size: 17vw;
     text-align: center;
     max-width: 80%;
     line-height: 1.5;
     z-index: 2;
 }
 
+.Title {
+    position: relative;
+    /* top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); */
+    font-family: NyushuSerif;
+    font-size: 15vw;
+    /* text-align: center; */
+    /* max-width: 80%; */
+    line-height: 1.5;
+    z-index: 2;
+    display:block;
+}
+
+.engTitle {
+    font-size: 10vw;
+    font-family: NyushuSerif;
+    display:none;
+}
+
+.engChinTitle:hover .Title{
+    display:none;
+}
+
+.engChinTitle:hover .engTitle{
+    display:block;
+}
 
 .TimeLine-container {
-    position:relative;
-    background:black;
+    /* background:black; */
     /* min-height: 10vh;
     width: 390vw; */
     margin-top: 90vh;
-    bottom: 0;
+    bottom: 20vh;
     z-index: 10;
     width: max-content;
+    z-index:20;
     /* margin-left: 20px;
     width: 100%;
     display:flex;
@@ -222,7 +246,14 @@ body {
     height: 2px;
     background-color: white;
     position:relative;
-    transition: width 0.3s ease;
+    /* transition: width 0.3s ease; */
+    z-index:20;
+    transition: transform 0.8s cubic-bezier(0.25, 1, 0.5, 1), width 0.3s ease;
+}
+
+.TimeLine-line.active{
+    transform:translateY(-75vh);
+    
 }
 
 .tick-container {
@@ -231,6 +262,7 @@ body {
     flex-direction:row;
     align-items: center;
     width:50vw;
+    height:10vh;
 }
 
 .tick {
@@ -241,14 +273,15 @@ body {
     cursor: pointer;
     transition: height 0.3s ease-in-out;
     transform-origin: top;
-}
+    z-index:20;
+} 
 
 .tick-label {
     margin-left: 10px;
     margin-top: 80px;
     position:absolute;
     color: white;
-    background:black;
+    /* background:black; */
     font-size: 14px;
     text-align: left;
     white-space: normal;
@@ -259,7 +292,7 @@ body {
     content:attr(data-lable);
     position:absolute;
     color: white;
-    background:black;
+    /* background:black; */
     font-size: 14px;
     text-align: left;
     white-space: normal;
@@ -302,7 +335,7 @@ body {
     font-size: 14px;
     display: none;
     transition: opacity 0.3s ease-in-out;
-
+    z-index: 20;
 
     white-space: normal;
     word-wrap: break-word;
@@ -312,6 +345,7 @@ body {
 .tick-container:hover .tick{
     height: 300px;
     width: 5px;
+    
 }
 
 .tick-container:hover .tick-label{
@@ -335,11 +369,17 @@ body {
 .tick-container.active .tick{
     height: 300px;
     width: 5px;
+    /* transform: translateY(-8vh); */
 }
 
 .tick-container.active .text-block {
     display: block;
+    /* transform: translateY(-8vh); */
 }
+
+/* #R.active .text-block{
+    display:block;
+} */
 
 
 
@@ -347,13 +387,23 @@ body {
     position:absolute;
     background: black;
     width: 390vw;
-    height: 90vh;
-    z-index:9;
-    display: none;
+    height: 8vh;
+    opacity:0;
+    /* display: none; */
+    /* opacity:0; */
+    /* visibility: hidden; */
+    transition: transform 0.5s /*cubic-bezier(0.25, 1, 0.5, 1)*/, width 0.3s ease;
+    
+    
 }
 
 #blackbackground.active {
-    display: block;
+    /* display: block; */
+    /* opacity:1; */
+    /* visibility: visible; */
+    height:90vh;
+    opacity:1;
+    transform:translateY(-75vh);
 }
 
 /* .TimeLine-mark {
@@ -364,11 +414,134 @@ body {
     font-weight: bold;
 } */
 
+#openAll:hover{
+background-color: white;
+color: black;
+
+}
+
+#closeAll:hover{
+    background-color:white;
+    color:black;
+}
+
+#openAll {
+    position:fixed;
+    width:5vw;
+    height:5vh;
+    top: 0.5vh;
+    left:1vw;
+    background: rgba(0, 0, 0, 0.8);
+    /* padding:4px; */
+    font-size: 0.8vw;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
 
 
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    z-index:99;
+}
 
 
+#closeAll {
+    position:fixed;
+    width:5vw;
+    height:5vh;
+    top: 0.5vh;
+    right:1vw;
+    background: rgba(0, 0, 0);
+    padding:4px;
+    font-size: 0.8vw;
 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    z-index:99;
+
+    opacity:0;
+}
+
+.navigation{
+    position:fixed;
+    top: 3vh;
+    left:50%;
+    transform: translate(-50%, -50%);
+
+    width:85vw;
+    height:5vh;
+
+    justify-content: center;
+    gap: 3vw;
+    align-items: center;
+    background-color: black;
+    display: flex;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+
+    /* padding:2vw 2vw 2vw 2vw; */
+    padding: 1vw;
+    font-size: 0.6vw;
+    
+    opacity: 0;
+    transition: opacity 0.5s;
+
+    z-index: 99;
+}
+
+.NaviWord{
+    /* width:6vw;
+    word-wrap: break-word;
+    overflow-wrap: break-word; */
+
+    background-color: rgba(255, 255, 255, 0);
+    padding:0.3vw;
+    height:5vh;
+    display:flex;
+    align-items: center;
+
+    top:0;
+    bottom:0;
+    /* border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px; */
+}
+
+.NaviWord.active{
+    /* width:6vw;
+    word-wrap: break-word;
+    overflow-wrap: break-word; */
+
+    background-color: rgb(255, 255, 255);
+    color: black;
+    
+    padding:0.3vw;
+    height:5vh;
+    display:flex;
+    align-items: center;
+
+    top:0;
+    bottom:0;
+    /* border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px; */
+}
 
 /* text block style */
 .text-block p{
@@ -488,16 +661,44 @@ img {
 
 /* text block style HOVER*/
 
-#english {
-    display:none;
-    /* opacity: 0; */
+.paragraph-block {
+    /* min-height: auto; */
+    /* align-items: flex-start; */
+    /* display: flex; */
+    position: relative;
+    overflow:hidden;
 }
+
+#english, #chinese {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    transition: opacity 0.3s ease-in-out;
+}
+
+#english {
+    /* display:none; */
+    opacity: 0;
+    /* position:relative; */
+    /* visibility: hidden; */
+}
+
+/* #chinese {
+    display:block;
+    opacity:1;
+    position:relative;
+    visibility: visible;
+
+    opacity: 0;
+} */
 
 .paragraph-block:hover #chinese{
     
-    /* transition: opacity 0.3s ease-in-out;    
-    opacity:0; */
-    display:none;
+    /* transition: opacity 0.3s ease-in-out;*/    
+    opacity:0; 
+    /* display:none; */
+    /* visibility: hidden; */
 } 
 
 /* #english:hover {
@@ -506,10 +707,15 @@ img {
 
 .paragraph-block:hover #english{
     
-    /* transition: opacity 0.3s ease-in-out;
-    opacity:1; */
-    display:block;
+    /* transition: opacity 0.3s ease-in-out; */
+    opacity:1;
+    /* display:block; */
+    /* visibility:visible; */
 }
+
+/* a{
+    position:relative;
+} */
 
 /* .paragraph-block.active #chinese{
     display:none;
@@ -518,3 +724,113 @@ img {
 .paragraph-block.active #english{
     display:block;
 } */
+
+
+
+
+/* paragraph blocks */
+
+
+#R1{
+    height: 18vh;
+}
+
+#R2 {
+    height: 38vh;
+}
+
+#R3{
+    height: 100vh;
+}
+
+#S1{
+    height:200vh;
+}
+
+#S2{
+    height:195vh;
+}
+
+#I1{
+    height:90vh;
+}
+
+#I2{
+    height: 45vh;
+}
+
+#I3{
+    height: 83vh;
+}
+
+#I4{
+    height: 15vh;
+}
+
+#I5{
+    height:75vh;
+}
+
+#I6{
+    height:10vh;
+}
+
+#I7{
+    height:23vh;
+}
+
+#W1{
+    height:63vh;
+}
+
+#W2{
+    height:125vh;
+}
+
+#W3{
+    height:39vh;
+}
+
+#C1{
+    height:185vh;
+}
+
+#Ca1{
+    height:60vh;
+}
+
+#Ca2{
+    height:48vh;
+}
+
+#Ca3{
+    height:8vh;
+}
+
+#Ca4{
+    height:8vh;
+}
+
+#Ca5{
+    height:8vh;
+}
+
+#A1{
+    height:42vh;
+}
+
+#A2{
+    height:35vh;
+}
+
+#A3{
+    height:4vh;
+}
+
+#A4{
+    height:4vh;
+}
+
+#A5{
+    height:4vh;
+}
