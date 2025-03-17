@@ -24,6 +24,28 @@ function updateWidth (){
     }
 }
 
+
+
+
+
+
+// function updateWidth() {
+//     let activeTicks = $(".tick-container.active").length;
+//     let previousScroll = $(window).scrollLeft(); // Capture current scroll position
+
+//     if (activeTicks > 1) {
+//         $(".TimeLine-line, #blackbackground, .Gradient-Overlay").css("width", "710vw");
+//     } else {
+//         $(".TimeLine-line, #blackbackground, .Gradient-Overlay").css("width", "390vw");
+//     }
+
+//     $(window).scrollLeft(previousScroll); // Keep user’s view stable
+// }
+
+
+
+
+
 // $(".paragraph-block").click(function(){
 //     $(this).toggleClass("active");
 // })
@@ -36,6 +58,8 @@ $("#openAll").click(function () {
     $("#openAll").css("opacity","0");
     $(".navigation").css("opacity","1");
     $(".NaviWord").addClass("active");
+    $(".upIndicate").css("opacity","1");
+
     updateWidth();
 });
 
@@ -47,8 +71,38 @@ $("#closeAll").click(function () {
     $("#openAll").css("opacity","1");
     $(".navigation").css("opacity","0");
     $(".NaviWord").remove("active");
+    $(".upIndicate").css("opacity","0");
     updateWidth();
 });
+
+// $(".NaviWord.active").hover(function () {
+//     let tickId = $(this).attr("id").replace("_", "");
+//     let targetTick = $("#" + tickId);
+//     if (targetTick.length) {
+//         $("html, body").stop().animate({
+//             scrollLeft: targetTick.offset().left
+//         }, 500);
+//     }
+// });
+
+// $(".NaviWord").click(function () {
+//     let tickId = $(this).attr("id").replace("_", "");
+//     let targetTick = $("#" + tickId);
+
+//     if (!$(this).hasClass("active")) {
+//         $(this).addClass("active");
+//         targetTick.addClass("active");
+
+//         $("html, body").stop().animate({
+//             scrollLeft: targetTick.offset().left
+//         }, 500);
+//     } else {
+//         $(this).removeClass("active");
+//         targetTick.removeClass("active");
+//     }
+
+//     updateWidth();
+// });
 
 $(".tick-container").click(function(){
     $(this).toggleClass("active");
@@ -59,14 +113,19 @@ $(".tick-container").click(function(){
         $(".TimeLine-line").addClass("active");
         $("#closeAll").css("opacity","1");
         $(".navigation").css("opacity","1");
+        $(".upIndicate").css("opacity","1");
     //  $("body").css("overflow-y","auto");
     }else{
         $("#blackbackground").removeClass("active");
         $(".TimeLine-line").removeClass("active");
         $("#closeAll").css("opacity","0");
         $(".navigation").css("opacity","0");
+        $(".upIndicate").css("opacity","0");
+
     //  $("body").css("overflow-y", "hidden");
     }
+
+   
 
     if($("#RI").hasClass("active")) {
         $("#Historical_Background").addClass("active");
@@ -153,6 +212,15 @@ $("#Historical_Background").click(function(){
         $("#RI").removeClass("active");
     }
 
+    if ($(".tick-container.active").length === 0) {
+        $(".TimeLine-line").removeClass("active");
+        $("#blackbackground").removeClass("active");
+        $("#closeAll").css("opacity", "0");
+        $(".navigation").css("opacity", "0"); 
+        $(".upIndicate").css("opacity","0");
+
+    }
+
     // if($(".tick-container.active").length < 1){
     //     $("#blackbackground").removeClass("active");
     //     $(".TimeLine-line").removeClass("active");
@@ -168,6 +236,31 @@ $("#Historical_Background").click(function(){
     updateWidth();
 })
 
+
+// $(".NaviWord").click(function(){
+
+
+
+//     // if($(".NaviWord.active").length < 0){
+//     //     $("#blackbackground").removeClass("active");
+//     //     $(".TimeLine-line").removeClass("active");
+//     //     $("#closeAll").css("opacity","0");
+//     //     $(".navigation").css("opacity","0");
+//     //     $(".upIndicate").css("opacity","0");
+//     // }
+
+
+//     if ($(".tick-container.active").length === 0) {
+//         $(".TimeLine-line").removeClass("active");
+//         $("#blackbackground").removeClass("active");
+//         $("#closeAll").css("opacity", "0");
+//         $(".navigation").css("opacity", "0"); 
+//     }
+
+//     updateWidth();
+
+// })
+
 $("#Reason_time_and_place_it_born").click(function(){
     $(this).toggleClass("active");
 
@@ -175,6 +268,14 @@ $("#Reason_time_and_place_it_born").click(function(){
         $("#R").addClass("active");
     }else{
         $("#R").removeClass("active");
+    }
+
+    if ($(".tick-container.active").length === 0) {
+        $(".TimeLine-line").removeClass("active");
+        $("#blackbackground").removeClass("active");
+        $("#closeAll").css("opacity", "0");
+        $(".navigation").css("opacity", "0"); 
+        $(".upIndicate").css("opacity","0");
     }
 
     // if($(".tick-container.active").length < 1){
@@ -201,6 +302,14 @@ $("#Societal_and_cultural_background").click(function(){
         $("#S").removeClass("active");
     }
 
+    if ($(".tick-container.active").length === 0) {
+        $(".TimeLine-line").removeClass("active");
+        $("#blackbackground").removeClass("active");
+        $("#closeAll").css("opacity", "0");
+        $(".navigation").css("opacity", "0"); 
+        $(".upIndicate").css("opacity","0");
+    }
+
     // if($(".tick-container.active").length < 1){
     //     $("#blackbackground").removeClass("active");
     //     $(".TimeLine-line").removeClass("active");
@@ -223,6 +332,14 @@ $("#Important_Figure").click(function(){
         $("#I").addClass("active");
     }else{
         $("#I").removeClass("active");
+    }
+
+    if ($(".tick-container.active").length === 0) {
+        $(".TimeLine-line").removeClass("active");
+        $("#blackbackground").removeClass("active");
+        $("#closeAll").css("opacity", "0");
+        $(".navigation").css("opacity", "0"); 
+        $(".upIndicate").css("opacity","0");
     }
 
     // if($(".tick-container.active").length < 1){
@@ -248,6 +365,14 @@ $("#Language_Structure").click(function(){
     }else{
         $("#LI").removeClass("active");
     }
+    if ($(".tick-container.active").length === 0) {
+        $(".TimeLine-line").removeClass("active");
+        $("#blackbackground").removeClass("active");
+        $("#closeAll").css("opacity", "0");
+        $(".navigation").css("opacity", "0"); 
+        $(".upIndicate").css("opacity","0");
+    }
+
     updateWidth();
 })
 
@@ -259,6 +384,14 @@ $("#Writing_system").click(function(){
     }else{
         $("#W").removeClass("active");
     }
+    if ($(".tick-container.active").length === 0) {
+        $(".TimeLine-line").removeClass("active");
+        $("#blackbackground").removeClass("active");
+        $("#closeAll").css("opacity", "0");
+        $(".navigation").css("opacity", "0"); 
+        $(".upIndicate").css("opacity","0");
+    }
+
     updateWidth();
 })
 
@@ -270,6 +403,15 @@ $("#Comparison").click(function(){
     }else{
         $("#Co").removeClass("active");
     }
+
+    if ($(".tick-container.active").length === 0) {
+        $(".TimeLine-line").removeClass("active");
+        $("#blackbackground").removeClass("active");
+        $("#closeAll").css("opacity", "0");
+        $(".navigation").css("opacity", "0"); 
+        $(".upIndicate").css("opacity","0");
+    }
+
     updateWidth();
 })
 
@@ -281,6 +423,15 @@ $("#Calligraphy_Traditions_and_Techniques").click(function(){
     }else{
         $("#CaI").removeClass("active");
     }
+
+    if ($(".tick-container.active").length === 0) {
+        $(".TimeLine-line").removeClass("active");
+        $("#blackbackground").removeClass("active");
+        $("#closeAll").css("opacity", "0");
+        $(".navigation").css("opacity", "0"); 
+        $(".upIndicate").css("opacity","0");
+    }
+
     updateWidth();
 })
 
@@ -292,6 +443,15 @@ $("#Calligraphy").click(function(){
     }else{
         $("#Ca").removeClass("active");
     }
+
+    if ($(".tick-container.active").length === 0) {
+        $(".TimeLine-line").removeClass("active");
+        $("#blackbackground").removeClass("active");
+        $("#closeAll").css("opacity", "0");
+        $(".navigation").css("opacity", "0"); 
+        $(".upIndicate").css("opacity","0");
+    }
+
     updateWidth();
 })
 
@@ -303,6 +463,15 @@ $("#Art_Expression").click(function(){
     }else{
         $("#A").removeClass("active");
     }
+
+    if ($(".tick-container.active").length === 0) {
+        $(".TimeLine-line").removeClass("active");
+        $("#blackbackground").removeClass("active");
+        $("#closeAll").css("opacity", "0");
+        $(".navigation").css("opacity", "0"); 
+        $(".upIndicate").css("opacity","0");
+    }
+
     updateWidth();
 })
 
@@ -314,6 +483,15 @@ $("#Other").click(function(){
     }else{
         $("#O").removeClass("active");
     }
+
+    if ($(".tick-container.active").length === 0) {
+        $(".TimeLine-line").removeClass("active");
+        $("#blackbackground").removeClass("active");
+        $("#closeAll").css("opacity", "0");
+        $(".navigation").css("opacity", "0"); 
+        $(".upIndicate").css("opacity","0");
+    }
+
     updateWidth();
 })
 
