@@ -1,10 +1,3 @@
-// document.querySelectorAll(".tick").forEach(tick =>{
-//     tick.addEventListener("click", function(){
-//         this.classList.toggle("active");
-//         adjustTicks();
-//     });
-// });
-
 
 // $(".tick").click(function(){
 //     $(this).toggleClass("active");
@@ -13,6 +6,10 @@
 
 function updateWidth (){
     var activeTicks = $(".tick-container.active").length;
+
+//     let activeTicks = $(".tick-container.active").length;
+//     let previousScroll = $(window).scrollLeft();
+
     if (activeTicks > 1) {
         $(".TimeLine-line").css("width", "710vw");
         $(".Gradient-Overlay").css("width", "710vw");
@@ -22,25 +19,10 @@ function updateWidth (){
         $(".Gradient-Overlay").css("width", "390vw");
         $("#blackbackground").css("width", "390vw");
     }
+    //     $(window).scrollLeft(previousScroll);
+
 }
 
-
-
-
-
-
-// function updateWidth() {
-//     let activeTicks = $(".tick-container.active").length;
-//     let previousScroll = $(window).scrollLeft();
-
-//     if (activeTicks > 1) {
-//         $(".TimeLine-line, #blackbackground, .Gradient-Overlay").css("width", "710vw");
-//     } else {
-//         $(".TimeLine-line, #blackbackground, .Gradient-Overlay").css("width", "390vw");
-//     }
-
-//     $(window).scrollLeft(previousScroll);
-// }
 
 
 
@@ -74,35 +56,6 @@ $("#closeAll").click(function () {
     $(".upIndicate").css("opacity","0");
     updateWidth();
 });
-
-// $(".NaviWord.active").hover(function () {
-//     let tickId = $(this).attr("id").replace("_", "");
-//     let targetTick = $("#" + tickId);
-//     if (targetTick.length) {
-//         $("html, body").stop().animate({
-//             scrollLeft: targetTick.offset().left
-//         }, 500);
-//     }
-// });
-
-// $(".NaviWord").click(function () {
-//     let tickId = $(this).attr("id").replace("_", "");
-//     let targetTick = $("#" + tickId);
-
-//     if (!$(this).hasClass("active")) {
-//         $(this).addClass("active");
-//         targetTick.addClass("active");
-
-//         $("html, body").stop().animate({
-//             scrollLeft: targetTick.offset().left
-//         }, 500);
-//     } else {
-//         $(this).removeClass("active");
-//         targetTick.removeClass("active");
-//     }
-
-//     updateWidth();
-// });
 
 $(".tick-container").click(function(){
     $(this).toggleClass("active");
