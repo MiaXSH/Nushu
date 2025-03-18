@@ -221,6 +221,13 @@ $("#Historical_Background").click(function(){
 
     }
 
+    if($(".tick-container.active").length < 11) {
+        $("#openAll").css("opacity","1");
+    }else{
+        $("#openAll").css("opacity","0");
+
+    }
+
     // if($(".tick-container.active").length < 1){
     //     $("#blackbackground").removeClass("active");
     //     $(".TimeLine-line").removeClass("active");
@@ -278,6 +285,13 @@ $("#Reason_time_and_place_it_born").click(function(){
         $(".upIndicate").css("opacity","0");
     }
 
+    if($(".tick-container.active").length < 11) {
+        $("#openAll").css("opacity","1");
+    }else{
+        $("#openAll").css("opacity","0");
+
+    }
+
     // if($(".tick-container.active").length < 1){
     //     $("#blackbackground").removeClass("active");
     //     $(".TimeLine-line").removeClass("active");
@@ -308,6 +322,13 @@ $("#Societal_and_cultural_background").click(function(){
         $("#closeAll").css("opacity", "0");
         $(".navigation").css("opacity", "0"); 
         $(".upIndicate").css("opacity","0");
+    }
+
+    if($(".tick-container.active").length < 11) {
+        $("#openAll").css("opacity","1");
+    }else{
+        $("#openAll").css("opacity","0");
+
     }
 
     // if($(".tick-container.active").length < 1){
@@ -342,6 +363,13 @@ $("#Important_Figure").click(function(){
         $(".upIndicate").css("opacity","0");
     }
 
+    if($(".tick-container.active").length < 11) {
+        $("#openAll").css("opacity","1");
+    }else{
+        $("#openAll").css("opacity","0");
+
+    }
+
     // if($(".tick-container.active").length < 1){
     //     $("#blackbackground").removeClass("active");
     //     $(".TimeLine-line").removeClass("active");
@@ -373,6 +401,13 @@ $("#Language_Structure").click(function(){
         $(".upIndicate").css("opacity","0");
     }
 
+    if($(".tick-container.active").length < 11) {
+        $("#openAll").css("opacity","1");
+    }else{
+        $("#openAll").css("opacity","0");
+
+    }
+
     updateWidth();
 })
 
@@ -390,6 +425,13 @@ $("#Writing_system").click(function(){
         $("#closeAll").css("opacity", "0");
         $(".navigation").css("opacity", "0"); 
         $(".upIndicate").css("opacity","0");
+    }
+
+    if($(".tick-container.active").length < 11) {
+        $("#openAll").css("opacity","1");
+    }else{
+        $("#openAll").css("opacity","0");
+
     }
 
     updateWidth();
@@ -412,6 +454,13 @@ $("#Comparison").click(function(){
         $(".upIndicate").css("opacity","0");
     }
 
+    if($(".tick-container.active").length < 11) {
+        $("#openAll").css("opacity","1");
+    }else{
+        $("#openAll").css("opacity","0");
+
+    }
+
     updateWidth();
 })
 
@@ -430,6 +479,13 @@ $("#Calligraphy_Traditions_and_Techniques").click(function(){
         $("#closeAll").css("opacity", "0");
         $(".navigation").css("opacity", "0"); 
         $(".upIndicate").css("opacity","0");
+    }
+
+    if($(".tick-container.active").length < 11) {
+        $("#openAll").css("opacity","1");
+    }else{
+        $("#openAll").css("opacity","0");
+
     }
 
     updateWidth();
@@ -452,6 +508,13 @@ $("#Calligraphy").click(function(){
         $(".upIndicate").css("opacity","0");
     }
 
+    if($(".tick-container.active").length < 11) {
+        $("#openAll").css("opacity","1");
+    }else{
+        $("#openAll").css("opacity","0");
+
+    }
+
     updateWidth();
 })
 
@@ -472,6 +535,13 @@ $("#Art_Expression").click(function(){
         $(".upIndicate").css("opacity","0");
     }
 
+    if($(".tick-container.active").length < 11) {
+        $("#openAll").css("opacity","1");
+    }else{
+        $("#openAll").css("opacity","0");
+
+    }
+
     updateWidth();
 })
 
@@ -490,6 +560,13 @@ $("#Other").click(function(){
         $("#closeAll").css("opacity", "0");
         $(".navigation").css("opacity", "0"); 
         $(".upIndicate").css("opacity","0");
+    }
+
+    if($(".tick-container.active").length < 11) {
+        $("#openAll").css("opacity","1");
+    }else{
+        $("#openAll").css("opacity","0");
+
     }
 
     updateWidth();

@@ -239,6 +239,8 @@ body {
 } */
 
 
+
+
 .upIndicate{
     position:fixed;
 
@@ -256,17 +258,44 @@ body {
     transition: opacity 0.8s;
 }
 
+@keyframes bounceArrow{
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0); }
+}
+
 .arrow{
     position:absolute;
     align-items: center;
     left:16%;
     top:10%;
+
     width: 0;
     height: 0;
     border-left: 1vw solid transparent;
     border-right: 1vw solid transparent;
     border-bottom: 1vw solid white; 
+
     display: inline-block;
+    animation: bounceArrow 1s infinite ease-in-out;
+}
+
+.guide{
+    /* align-items: center;
+    justify-content: center; */
+    /* top:2vh;
+    left:2vw; */
+    position:absolute;
+    top:40%;
+    left:50%;
+
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+
+    display: inline-block;
+    white-space: nowrap;
+
+    transform: translate(-50%, -50%) rotate(90deg);
+    transform-origin: center;
 }
 
 .TimeLine-line {
@@ -375,6 +404,13 @@ body {
     overflow-wrap: break-word;
 }
 
+#translation{
+    font-size: 19px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+
+
 /* .tick-container:hover{
     transform:translateY(-15vh);
 } */
@@ -469,9 +505,10 @@ color: black;
     height:5vh;
     top: 0.5vh;
     left:1vw;
-    background: rgba(0, 0, 0, 0.8);
+    background: rgba(0, 0, 0, 0.5);
     /* padding:4px; */
     font-size: 0.8vw;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 
     display: flex;
     justify-content: center;
@@ -493,9 +530,10 @@ color: black;
     height:5vh;
     top: 0.5vh;
     right:1vw;
-    background: rgba(0, 0, 0);
+    background: rgba(0, 0, 0,0.5);
     padding:4px;
     font-size: 0.8vw;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 
     display: flex;
     justify-content: center;
@@ -519,12 +557,13 @@ color: black;
     transform: translate(-50%, -50%);
 
     width:85vw;
-    height:5vh;
+    height:5.5vh;
 
     justify-content: center;
-    gap: 3vw;
+    gap: 2vw;
     align-items: center;
-    background-color: black;
+
+    background-color: rgba(0,0,0,0.5);
     display: flex;
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
@@ -533,7 +572,8 @@ color: black;
 
     /* padding:2vw 2vw 2vw 2vw; */
     padding: 1vw;
-    font-size: 0.6vw;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 0.8vw;
     
     opacity: 0;
     transition: opacity 0.5s;
@@ -548,7 +588,7 @@ color: black;
 
     background-color: rgba(255, 255, 255, 0);
     padding:0.3vw;
-    height:5vh;
+    height:5.5vh;
     display:flex;
     align-items: center;
 
@@ -560,16 +600,26 @@ color: black;
     border-bottom-right-radius: 10px; */
 }
 
+.NaviWord:hover{
+    background-color: rgba(255, 255, 255, 0.8);
+    color: black;
+}
+
+.NaviWord.active:hover{
+    background-color: rgba(255, 255, 255, 0.5);
+    color: black;
+}
+
 .NaviWord.active{
     /* width:6vw;
     word-wrap: break-word;
     overflow-wrap: break-word; */
 
-    background-color: rgb(255, 255, 255);
+    background-color: rgba(255, 255, 255, 0.8);
     color: black;
     
     padding:0.3vw;
-    height:5vh;
+    height:5.5vh;
     display:flex;
     align-items: center;
 
@@ -594,6 +644,7 @@ color: black;
     color:rgb(99, 99, 99);
     text-align: right;
 }
+
 
 ul {
     list-style-type: none; /* no bullets */
@@ -696,6 +747,33 @@ img {
     width:48vw;
 }
 
+#chinese-subtitle{
+    font-size: 17px;
+}
+
+
+#subtitle{
+    font-size:17px;
+}
+
+
+#space{
+margin-bottom:50px;
+}
+
+#subtitle-space{
+    font-size:17px;
+    margin-bottom: 25px;
+    margin-top: 40px;
+}
+
+
+
+
+
+
+
+
 
 /* text block style HOVER*/
 
@@ -730,6 +808,9 @@ img {
 
     opacity: 0;
 } */
+
+
+
 
 .paragraph-block:hover #chinese{
     
@@ -795,7 +876,7 @@ img {
     display: flex;
     flex-direction:row;
     align-items: center;
-    width:20vw;
+    /* width:20vw; */
     height:10vh;
 }
 
@@ -825,7 +906,7 @@ img {
 }
 
 #I1{
-    height:90vh;
+    height:105vh;
 }
 
 #I2{
@@ -849,7 +930,7 @@ img {
 }
 
 #I7{
-    height:23vh;
+    height:25vh;
 }
 
 #W1{
@@ -865,7 +946,7 @@ img {
 }
 
 #C1{
-    height:185vh;
+    height:195vh;
 }
 
 #Ca1{
@@ -889,11 +970,11 @@ img {
 }
 
 #A1{
-    height:42vh;
+    height:45vh;
 }
 
 #A2{
-    height:35vh;
+    height:37vh;
 }
 
 #A3{
