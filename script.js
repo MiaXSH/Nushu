@@ -31,7 +31,7 @@ function updateWidth (){
 
 // function updateWidth() {
 //     let activeTicks = $(".tick-container.active").length;
-//     let previousScroll = $(window).scrollLeft(); // Capture current scroll position
+//     let previousScroll = $(window).scrollLeft();
 
 //     if (activeTicks > 1) {
 //         $(".TimeLine-line, #blackbackground, .Gradient-Overlay").css("width", "710vw");
@@ -39,7 +39,7 @@ function updateWidth (){
 //         $(".TimeLine-line, #blackbackground, .Gradient-Overlay").css("width", "390vw");
 //     }
 
-//     $(window).scrollLeft(previousScroll); // Keep user’s view stable
+//     $(window).scrollLeft(previousScroll);
 // }
 
 
@@ -598,13 +598,11 @@ updateWidth();
 //         "height": "300px",
 //         "width": "5px"
 //     });
-//   //this happens when hover
 // }, function() {
 //     $(this).siblings(".tick").css({
 //         "height": "20px",
 //         "width": "3px"
 //     });
-//   //this hapens when off
 // }
 // );
 
